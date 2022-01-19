@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h1> Welcome customer </h1>
+<p>click on the plan type to view it's avilable hospitals</p>
+<hr>
+
+<table class="table table-striped">
+    <tr>
+        <th>plan_id</th>
+        <th> plan_type </th>
+        <th>benficary</th>
+    </tr>
+
+    {% for plan in plans %}
+    <tr>
+        <td>{{plan.plan_id}}</td>
+        <td><a href="hospitals/ {{ plan.type_id }}">{{plan.type_id}}</a></td>
+        <td>{{plan.benficary}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}

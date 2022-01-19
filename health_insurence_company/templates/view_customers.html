@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h1> Welcome Admin </h1>
+
+<hr>
+
+<table class="table table-striped">
+    <tr>
+        <th>cus_id</th>
+        <th>name</th>
+    </tr>
+
+    {% for customer in customers %}
+    <tr>
+        <td>{{customer.cus_id}}</td>
+        <td>{{customer.name}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

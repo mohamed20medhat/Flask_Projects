@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+
+<h1> Welcome Admin </h1>
+<h2>show claims page</h2>
+
+<hr>
+
+<table class="table table-striped">
+    <tr>
+        <th>claim_id</th>
+        <th>expensise</th>
+        <th>description</th>
+        <th>cus_id</th>
+        <th>benficary</th>
+        <th>health_care_provider</th>
+        <th>date_of_creation</th>
+        <th>set resolved</th>
+
+    </tr>
+
+    {% for claim in claims %}
+    <tr>
+        <td>{{claim.claim_id}}</td>
+        <td>{{claim.expensise}}</td>
+        <td>{{claim.description}}</td>
+        <td>{{claim.cus_id}}</td>
+        <td>{{claim.benficary}}</td>
+        <td>{{claim.health_care_provider}}</td>
+        <td>{{claim.date_of_creation}}</td>
+
+        {% if claim.resolved == 0  %}
+            <td><a href="/resolve/{{claim.claim_id}}" class="btn btn-success">resolve</a></td>
+        {% endif %}
+
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

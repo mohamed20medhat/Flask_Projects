@@ -1,0 +1,30 @@
+{% extends "layout.html"%}
+
+{% block body %}
+<h1>Regester</h1>
+{% from "includes/_formhelpers.html" import renderfield %}
+<form method="post" action="">
+    <div class="form-group">
+        {{renderfield(form.name, class= "form-control")}}
+    </div>
+
+    <div class="form-group">
+        {{renderfield(form.email, class= "form-control")}}
+    </div>
+
+    <div class="form-group">
+        {{renderfield(form.username, class= "form-control")}}
+    </div>
+
+    <div class="form-group">
+        {{renderfield(form.password, class= "form-control")}}
+    </div>
+
+    <div class="form-group">
+        {{renderfield(form.confirm, class= "form-control")}}
+    </div>
+
+    <p><input type="submit" class='btn btn-primary' value="submit" ></p>
+
+</form>
+{% endblock %}

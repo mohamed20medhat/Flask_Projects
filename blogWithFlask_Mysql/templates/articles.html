@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+<!-- took the title and showed it. and got the id and put it in the link to go to and render it-->
+
+    {% block body %}
+        <h1>Articles</h1>
+        <ul class="list-group">
+            {% for article in articles %}
+                <li class="list-group-item"><a href="article/{{article.id}}">{{article.title}}</a></li>
+            {% endfor %}
+        </ul>
+    {% endblock %}
+
+
+<!-- make sure that you understand that we go to other pages from here though the ankor tag we've put here. NOT from the routes. we confgure data only through the routes and get it from the db or the files. but still the concept of linking so far is done through html files themselves -->
+
